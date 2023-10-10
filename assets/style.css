@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#start {
+    color: green;
+    padding: 10px 20px;
+    margin-top: 30px;
+    margin-right: 60px;
+    text-transform: uppercase;
+    background: silver;
+    border: 10px solid white;
+    font-size: 30px;
+    font-weight: bold;
+    transition: all;
+}
+
+#start:hover {
+    color: #ffffff;
+    background: green;
+    border-color: black;
+    transition: all;
+}
