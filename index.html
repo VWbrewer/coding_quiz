@@ -13,21 +13,33 @@
     </header>
 
 
+  <main>
     <section>
-      <div class="Score">
-        <div class = "win-loss-container">
+        <button id= "start">Start</button>
+    <div id="timer">
+      <div class = "timer-text"></div>
+      <div class="large-font timer-count">105</div>
+        <h3>seconds remaining</h3>
+    </div>
+    </section>
+
+    
+      <div id="Score">
+        <div id= "right-wrong-container">
         <div>
         <h2>Right: <span class="right">0 </span> </h2>
         <h2>Wrong: <span class="wrong">0</span></h2>
       </div>
 
 
+    <div>
+    <button class="reset-button">Reset Score</button>
+    </div>
 
 
 
 
     <div id="container">
-        <button id="start">Start</button>
         <div id="quiz" style="display: none;">
           <div id="question"></div>
           <div id="choices">
@@ -36,8 +48,7 @@
             <button class="choice" id="C" onclick="checkAnswer('C')"></button>
             <button class="choice" id="D" onclick="checkAnswer('D')"></button>
           </div>
-          <div id="timer">
-            <div id="counter"></div>
+
           </div>
           <div id="progress"></div>
         </div>
@@ -45,4 +56,13 @@
       </div>
 
 
-    <script src="./assets/script.js"></script>
+
+
+
+    </div>
+  </div>
+</section>
+      </main>
+      <script src="./assets/script.js"></script>
+    </body>
+  </html>
