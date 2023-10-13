@@ -1,26 +1,15 @@
-var timeEl = document.querySelector(".time");
-var mainEl = document.getElementById("main");
-var startButton = document.querySelector(".start-button");
+var timeEl = document.querySelector("#time");
+var mainEl = document.querySelector("#main");
+var startButton = document.querySelector("#start");
+var timesUp = document.querySelector("#timesUp");
 
-
-var wordBlank = document.querySelector(".word-blanks");
-var win = document.querySelector(".win");
-var lose = document.querySelector(".lose");
-
-var chosenWord = "";
-var answersBlanks = 0;
-var rightCounter = 0;
-var wrongCounter = 0;
-var isWin = false;
-var timer;
-var timerCount;
-
-
+// Attach event listener to start button to call startGame function on click
+startButton.addEventListener("click") function () {
 
 // The init function is called when the page loads 
 function init() {
-  getRight();
-  getWrong();
+  startGame();
+  getQuestions();
 }
 
 
@@ -28,7 +17,7 @@ function init() {
 
 // The startGame function is called when the start button is clicked
 function startGame() {
-  isWin = false;
+
   timerLeft = 105;
   // Prevents start button from being clicked when round is in progress
   startButton.disabled = true;
@@ -70,6 +59,124 @@ function countdown() {
       }
     }, 1000);
   }
+
+
+
+
+
+
+
+
+  var questions = [
+    {
+      question: "",
+      
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+      
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+      
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+      
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+     
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+    
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+      
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    },
+    {
+      question: "",
+      
+      choiceA: "",
+      choiceB: "",
+      choiceC: "",
+      choiceD: "",
+      correct: "",
+    }
+  ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -123,80 +230,6 @@ function getWrong() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-  var myQuestions = [
-	{
-		question: "What is 10/2?",
-		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
-		},
-		correctAnswer: 'b'
-	},
-	{
-		question: "What is 30/3?",
-		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
-		},
-		correctAnswer: 'c'
-	}
-];
-
-
-
-
-// Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click", startGame);
-
-// Calls init() so that it fires when page opened
-init();
-
-// Bonus: Add reset button
-var resetButton = document.querySelector(".reset-button");
-
-function resetGame() {
-  // Resets win and loss counts
-  rightCounter = 0;
-  wrongCounter = 0;
-  // Renders win and loss counts and sets them into client storage
-  setRight()
-  setWrong()
-}
-// Attaches event listener to button
-resetButton.addEventListener("click", resetGame);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Arrays used to create blanks and letters on screen
-var lettersInChosenWord = [];
-var blanksLetters = [];
-
-// Array of words the user will guess
-var words = ["variable","array", "modulus", "object", "function", "string", "boolean"];
-
-
 // The winGame function is called when the win condition is met
 function winGame() {
   wordBlank.textContent = "YOU WON!!!🏆 ";
@@ -215,21 +248,6 @@ function loseGame() {
 
 
 
-// Creates blanks on screen
-function renderBlanks() {
-  // Randomly picks word from words array
-  chosenWord = words[Math.floor(Math.random() * words.length)];
-  lettersInChosenWord = chosenWord.split("");
-  numBlanks = lettersInChosenWord.length;
-  blanksLetters = []
-  // Uses loop to push blanks to blankLetters array
-  for (var i = 0; i < numBlanks; i++) {
-    blanksLetters.push("_");
-  }
-  // Converts blankLetters array into a string and renders it on the screen
-  wordBlank.textContent = blanksLetters.join(" ")
-}
-
 // Updates win count on screen and sets win count to client storage
 function setWins() {
   win.textContent = winCounter;
@@ -244,47 +262,20 @@ function setLosses() {
 
 
 
-function checkWin() {
-  // If the word equals the blankLetters array when converted to string, set isWin to true
-  if (chosenWord === blanksLetters.join("")) {
-    // This value is used in the timer function to test if win condition is met
-    isWin = true;
-  }
+
+
+
+// Bonus: Add reset button
+var resetButton = document.querySelector(".reset-button");
+
+function resetGame() {
+  // Resets win and loss counts
+  rightCounter = 0;
+  wrongCounter = 0;
+  // Renders win and loss counts and sets them into client storage
+  setRight()
+  setWrong()
 }
-
-// Tests if guessed letter is in word and renders it to the screen.
-function checkLetters(letter) {
-  var letterInWord = false;
-  for (var i = 0; i < numBlanks; i++) {
-    if (chosenWord[i] === letter) {
-      letterInWord = true;
-    }
-  }
-  if (letterInWord) {
-    for (var j = 0; j < numBlanks; j++) {
-      if (chosenWord[j] === letter) {
-        blanksLetters[j] = letter;
-      }
-    }
-    wordBlank.textContent = blanksLetters.join(" ");
-  }
-}
-
-// Attach event listener to document to listen for key event
-document.addEventListener("keydown", function(event) {
-  // If the count is zero, exit function
-  if (timerCount === 0) {
-    return;
-  }
-  // Convert all keys to lower case
-  var key = event.key.toLowerCase();
-  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split("");
-  // Test if key pushed is letter
-  if (alphabetNumericCharacters.includes(key)) {
-    var letterGuessed = event.key;
-    checkLetters(letterGuessed)
-    checkWin();
-  }
-});
-
+// Attaches event listener to button
+resetButton.addEventListener("click", resetGame);
 
