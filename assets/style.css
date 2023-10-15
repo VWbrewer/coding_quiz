@@ -3,7 +3,7 @@
 }
 
 header {
-    padding: 40px;
+    padding: 20px;
     text-align: left;
     float: left;
     background: rgb(38, 38, 146);
@@ -38,18 +38,20 @@ section {
 }
 
 
-
-
-
-
-#right-wrong-container {
+#score {
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+    text-align: center;
 }
 
-
-
+#question {
+    width: 800px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 
 
 
@@ -121,12 +123,6 @@ button {
 
 
 
-
-.word-guess {
-    width: 55vw;
-    height: 400px;
-}
-
 .results {
     width: 30vw;
     height: 400px;
@@ -142,9 +138,6 @@ button {
     padding: 20px;
 }
 
-.word-blanks {
-    line-height: 360px;
-}
 
 .large-font {
     font-size: 3.5em;

@@ -7,61 +7,34 @@
     <title>Test Your Knowledge</title>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
+  
   <body>
     <header>
       <div class= "large-font"> Coding Quiz </div>
+      <button id= "start"> Start </button>
     </header>
 
 
   <main>
     <section>
-        <button id= "start">Start</button>
-    <div id="timer">
+      <div id= "timer">
       <div class = "timer-text"></div>
-      <div class="large-font timer-count">105</div>
-        <h3>seconds remaining</h3>
-    </div>
+        <h1> Seconds Remaining </h1>
+      </div>
+      <h2>Right: <span class="right">0 </span> </h2>
+      <h2>Wrong: <span class="wrong">0 </span></h2>
     </section>
-
     
-      <div id="Score">
-        <div id= "right-wrong-container">
-        <div>
-        <h2>Right: <span class="right">0 </span> </h2>
-        <h2>Wrong: <span class="wrong">0</span></h2>
-      </div>
+    <div id="score">
 
-
-    <div>
-    <button class="reset-button">Reset Score</button>
+        <button class="high-scores"> High Scores</button>
     </div>
 
 
-
-
-    <div id="container">
-        <div id="quiz" style="display: none;">
-          <div id="question"></div>
-          <div id="choices">
-            <button class="choice" id="A" onclick="checkAnswer('A')"></button>
-            <button class="choice" id="B" onclick="checkAnswer('B')"></button>
-            <button class="choice" id="C" onclick="checkAnswer('C')"></button>
-            <button class="choice" id="D" onclick="checkAnswer('D')"></button>
-          </div>
-
-          </div>
-          <div id="progress"></div>
-        </div>
-        <div id="scoreContainer" style="display: none;"></div>
+      <div>
+        <button class="reset-button">Reset Score</button>
       </div>
 
-
-
-
-
-    </div>
-  </div>
-</section>
       </main>
       <script src="./assets/script.js"></script>
     </body>

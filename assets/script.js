@@ -1,49 +1,21 @@
-var timeEl = document.querySelector("#time");
+var timeEl = document.querySelector("#timer");
 var mainEl = document.querySelector("#main");
-var startButton = document.querySelector("#start");
+var startBtn = document.querySelector("#start");
 var timesUp = document.querySelector("#timesUp");
+var scoreEl = document.querySelector("#score");
+
+var questions = document.getElementById('questions')
 
 // Attach event listener to start button to call startGame function on click
 startButton.addEventListener("click") function () {
-
-// The init function is called when the page loads 
-function init() {
-  startGame();
-  getQuestions();
-}
-
-
-
-
-// The startGame function is called when the start button is clicked
-function startGame() {
-
   timerLeft = 105;
-  // Prevents start button from being clicked when round is in progress
-  startButton.disabled = true;
-  renderAnswers()
-  startTimer()
-}
-
-
-
-
-// Timer that counts down from 105
-function countdown() {
-    var timeLeft = 105;
-  
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
       // As long as the `timeLeft` is greater than 1
       if (timeLeft > 1) {
-        
-        // Set the `textContent` of `timerEl` to show the remaining seconds
-        
+      // Set the `textContent` of `timerEl` to show the remaining seconds
         timerEl.textContent = timeLeft + ' seconds remaining';
-        
-        
-        // Decrement `timeLeft` by 1
-        
+      // Decrement `timeLeft` by 1
         timeLeft--;
       } else if (timeLeft === 1) {
         // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
@@ -61,84 +33,71 @@ function countdown() {
   }
 
 
-
-
-
-
-
+  showQuestions(questions, quizContainer);
 
   var questions = [
     {
-      question: "",
+      question: "What is the file name for the styling on your code?",
       
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "README.md",
+      B: "style.act",
+      C: "style.css",
+      D: "scrip.js",
+      correct: "C",
     },
     {
-      question: "",
+      question: "How many heading tags can you have?",
       
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "6",
+      B: "10",
+      C: "3",
+      D: "12",
+      correct: "A",
     },
     {
-      question: "",
+      question: "In javascript what does ++ mean?",
       
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "Add these two variables",
+      B: "Move to next line",
+      C: "Increase numbers",
+      D: "Addition",
+      correct: "C",
     },
     {
-      question: "",
-      
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
-    },
-    {
-      question: "",
+      question: "In javascript what does Logical operator || mean?",
      
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "Logical or",
+      B: "Logical plus",
+      C: "Logical space",
+      D: "Logical separated",
+      correct: "A",
     },
     {
-      question: "",
+      question: "Within your HTML what does the <p> element represent?",
     
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "Picture",
+      B: "Piece",
+      C: "Placeholder",
+      D: "Paragraph",
+      correct: "D",
     },
     {
-      question: "",
+      question: "Outputting data with alert() does what?",
       
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "Make the date flash on the screen",
+      B: "Puts data in a box in the browser window",
+      C: "Makes the site have a warning",
+      D: "Adds alarm sound the data",
+      correct: "B",
     },
     {
-      question: "",
+      question: "In javascript what does * mean?",
       
-      choiceA: "",
-      choiceB: "",
-      choiceC: "",
-      choiceD: "",
-      correct: "",
+      A: "Multiplication",
+      B: "Focus",
+      C: "Shift Up",
+      D: "Modulus",
+      correct: "A",
     }
   ];
 
