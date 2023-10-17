@@ -1,10 +1,8 @@
-var timeEl = document.querySelector("#timer");
-var mainEl = document.querySelector("#main");
-var startBtn = document.querySelector("#start");
-var timesUp = document.querySelector("#timesUp");
-var scoreEl = document.querySelector("#score");
+var timeEl = document.getElementsById(".timer");
+var startButton = document.getElementsById("#start");
+var scoreEl = document.getElementsById("score");
 
-var questions = document.getElementById('questions')
+
 
 // Attach event listener to start button to call startGame function on click
 startButton.addEventListener("click") function () {
@@ -14,28 +12,29 @@ startButton.addEventListener("click") function () {
       // As long as the `timeLeft` is greater than 1
       if (timeLeft > 1) {
       // Set the `textContent` of `timerEl` to show the remaining seconds
-        timerEl.textContent = timeLeft + ' seconds remaining';
+        timerEl.textContent = timeLeft + 'seconds remaining';
       // Decrement `timeLeft` by 1
         timeLeft--;
       } else if (timeLeft === 1) {
         // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-        timerEl.textContent = timeLeft + ' second remaining';
+        timerEl.textContent = timeLeft + 'second remaining';
         timeLeft--;
       } else {
         // Once `timeLeft` gets to 0, set `timerEl` to an empty string
         timerEl.textContent = '';
-        // Use `clearInterval()` to stop the timer
-        clearInterval(timeInterval);
-        // Call the `displayMessage()` function
-        displayMessage();
+        endQuiz();
       }
     }, 1000);
   }
 
+  var highScoreButton = document.querySelector(".highScore-button");
+  
+  highScoreButton.addEventListener("click", );
 
-  showQuestions(questions, quizContainer);
 
-  var questions = [
+
+
+  var quizData = [
     {
       question: "What is the file name for the styling on your code?",
       
@@ -101,63 +100,30 @@ startButton.addEventListener("click") function () {
     }
   ];
 
+const questionsEl = document.querySelectorAll('h3')
+const answerEls = document.querySelector('.answer');
+
+const A_text = document.getElementById('A_text');
+const B_text = document.getElementById('B_text');
+const C_text = document.getElementById('C_text');
+const D_text = document.getElementById('D_text');
+const submitButton = document.getElementById('button');
 
 
+let currentQuestion = 0;
+let score = 0
 
+loadQuiz();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function loadQuiz() {
+    deselected();
+    const currentQuizData = quizData[currentQuestion];
+    questionEl.innerText = currentQuizData.question;
+    A_text.innerText = currentQuizData.A;
+    B_text.innerText = currentQuizData.B;
+    C_text.innerText = currentQuizData.C;
+    D_text.innerText = currentQuizData.D;
+}
 
 
 

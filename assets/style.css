@@ -22,11 +22,6 @@ body {
 }
 
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 section {
     flex: 0 auto;
@@ -53,8 +48,15 @@ section {
     top: 0;
 }
 
-
-
+.container{
+    background: #131313;
+    width: 600px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: inset 2px 3px 5px #000000, 0px 1px 1px #333;
+}
 
 
 #start {
@@ -87,16 +89,14 @@ section {
     padding: 5px;
 }
 
+#highScore-button {
+    font-size: 16px;
+    height: 30px;
+    line-height: 8px;
+    margin-top: 20px;
+}
 
-
-
-
-
-
-
-
-
-.reset-button {
+#reset-button {
     font-size: 16px;
     height: 30px;
     line-height: 8px;
@@ -104,11 +104,11 @@ section {
 }
 
 button {
-    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+    background: radial-gradient(circle, rgb(84, 84, 90) 0%, rgb(198, 208, 218)100%);
     border-radius: 8px;
     color: #13293d;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 20px;
     letter-spacing: 0.21px;
     line-height: 16px;
     max-width: 255px;
@@ -128,21 +128,18 @@ button {
     height: 400px;
 }
 
-.card {
-    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,124,33,0.604079131652661) 100%);
-    border: 1px solid #eceff1;
-    border-radius: 8px;
-    box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
-    margin: auto;
-    padding: 20px;
-}
 
 
 .large-font {
     font-size: 3.5em;
     text-align:center;
 }
+
+.hidden{
+    display: none;
+}
+
+
 
 
 
@@ -151,10 +148,6 @@ main {
     flex-direction: column;
 }
 
-.word-guess,
-.results {
-    width: 90vw;
-}
 
 section {
 background-color: white;
