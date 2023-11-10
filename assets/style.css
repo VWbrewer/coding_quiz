@@ -23,7 +23,7 @@ body {
 
 
 
-section {
+#container {
     flex: 0 auto;
     padding: 8px;
     margin-top: 50px;
@@ -32,8 +32,12 @@ section {
     text-align: center;
 }
 
+#quiz {
+    display: none;
+} 
 
-#score {
+
+#scoreContainer {
     display: flex;
     justify-content: space-between;
     margin-top: 5px;

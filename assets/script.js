@@ -1,11 +1,18 @@
-var timeEl = document.getElementsById(".timer");
-var startButton = document.getElementsById("#start");
-var scoreEl = document.getElementsById("score");
-
+var timerEl = document.querySelector("#timer");
+var startButtonEl = document.querySelector("#start");
+var highScoreButton = document.querySelector("#highScore-button");
+var scoreEl = document.querySelector("#score");
+const questionEl = document.querySelector("#questions");
+const answersEl = document.querySelector("#answers");
+var timeInterval 
 
 
 // Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click") function () {
+startButton.addEventListener("click", function() { 
+})
+
+startButton.addEventListener("click")
+function () {
   timerLeft = 105;
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
@@ -25,11 +32,12 @@ startButton.addEventListener("click") function () {
         endQuiz();
       }
     }, 1000);
-  }
+}
 
-  var highScoreButton = document.querySelector(".highScore-button");
+
   
-  highScoreButton.addEventListener("click", );
+  highScoreButton.addEventListener("click", function () {  
+  });
 
 
 
@@ -37,7 +45,7 @@ startButton.addEventListener("click") function () {
   var quizData = [
     {
       question: "What is the file name for the styling on your code?",
-      
+      answers: [
       A: "README.md",
       B: "style.act",
       C: "style.css",
@@ -118,7 +126,7 @@ loadQuiz();
 function loadQuiz() {
     deselected();
     const currentQuizData = quizData[currentQuestion];
-    questionEl.innerText = currentQuizData.question;
+    questionsEl.innerText = currentQuizData.question;
     A_text.innerText = currentQuizData.A;
     B_text.innerText = currentQuizData.B;
     C_text.innerText = currentQuizData.C;

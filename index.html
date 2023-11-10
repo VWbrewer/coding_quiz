@@ -11,15 +11,28 @@
   <body>
     <header>
       <div class= "large-font"> Coding Quiz </div>
-      <button id= "start"> Start </button>
     </header>
 
-
   <main>
-    <section>
-      <div id= "timer">
-      <div class = "timer-text"></div>
-        <h1> Seconds Remaining </h1>
+    <div id="container">
+      <button id= "start"> Start </button>
+      <div id="quiz"></div>
+        <div id="question"></div>
+        <div id="answers">
+          <button class="answers" id="A" onclick="checkAnswer('A')"></button>
+          <button class="answers" id="B" onclick="checkAnswer('B')"></button>
+          <button class="answers" id="C" onclick="checkAnswer('C')"></button>
+          <button class="answers" id="D" onclick="checkAnswer('D')"></button>
+        </div>
+        <div id="timer">
+          <div id="timer-text"></div>
+        </div>
+        <div id="progress"></div>
+      </div>
+      <div id="scoreContainer"></div>
+    </div>
+      
+        <!-- <h1> Seconds Remaining </h1>
       </div>
       <div id="score">
         <h2>Right: <span class="right">0 </span> </h2>
@@ -28,22 +41,17 @@
     </section>
     
     </div>
-      <button class="high-scores">High Scores</button>
+
     </div>
 
     <div class="container">
       <h3 id="question"></h3>
-      <ul>
-          <li><input type="radio" id="A" class="answer" name="answer"><label id="A_text" for="A">Question</label></li>
-          <li><input type="radio" id="B" class="answer" name="answer"><label id="B_text" for="B">Question</label></li>
-          <li><input type="radio" id="C" class="answer" name="answer"><label id="C_text" for="C">Question</label></li>
-          <li><input type="radio" id="D" class="answer" name="answer"><label id="D_text" for="D">Question</label></li>
-      </ul>
       <input type="submit" id="btn" value="Submit">
+    </div> -->
+
+    <div>
+      <button class="high-scores">High Scores</button>
     </div>
-
-
-
     <div>
       <button class="reset-button">Reset Score</button>
     </div>
