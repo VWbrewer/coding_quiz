@@ -9,7 +9,7 @@ var timeInterval
 
 // Attach event listener to start button to call startGame function on click
 startButton.addEventListener("click", function() { 
-})
+});
 
 startButton.addEventListener("click")
 function () {
@@ -46,67 +46,67 @@ function () {
     {
       question: "What is the file name for the styling on your code?",
       answers: [
-      A: "README.md",
-      B: "style.act",
-      C: "style.css",
-      D: "scrip.js",
-      correct: "C",
+      { A: "README.md", correct: false},
+      { B: "style.act", correct: false},
+      { C: "style.css", correct: true},
+      { D: "scrip.js", correct: false},
+      ]
     },
     {
       question: "How many heading tags can you have?",
-      
-      A: "6",
-      B: "10",
-      C: "3",
-      D: "12",
-      correct: "A",
+      answers: [
+      { A: "6", correct: true},
+      { B: "10", correct: false},
+      { C: "3", correct: false},
+      { D: "12", correct: false},
+      ]
     },
     {
       question: "In javascript what does ++ mean?",
-      
-      A: "Add these two variables",
-      B: "Move to next line",
-      C: "Increase numbers",
-      D: "Addition",
-      correct: "C",
+      answers: [
+      { A: "Add these two variables", correct: false},
+      { B: "Move to next line", correct: false},
+      { C: "Increase numbers", correct: true},
+      { D: "Addition", correct: false},
+      ]
     },
     {
       question: "In javascript what does Logical operator || mean?",
-     
-      A: "Logical or",
-      B: "Logical plus",
-      C: "Logical space",
-      D: "Logical separated",
-      correct: "A",
+      answers: [
+      { A: "Logical or", correct: true},
+      { B: "Logical plus", correct: false},
+      { C: "Logical space", correct: false},
+      { D: "Logical separated", correct: false},
+      ]
     },
     {
       question: "Within your HTML what does the <p> element represent?",
-    
-      A: "Picture",
-      B: "Piece",
-      C: "Placeholder",
-      D: "Paragraph",
-      correct: "D",
+      answers: [
+      { A: "Picture", correct: false},
+      { B: "Piece", correct: false},
+      { C: "Placeholder", correct: false},
+      { D: "Paragraph", correct: true},
+      ]
     },
     {
       question: "Outputting data with alert() does what?",
-      
-      A: "Make the date flash on the screen",
-      B: "Puts data in a box in the browser window",
-      C: "Makes the site have a warning",
-      D: "Adds alarm sound the data",
-      correct: "B",
+      answers: [
+      { A: "Make the date flash on the screen", correct: false},
+      { B: "Puts data in a box in the browser window", correct: true},
+      {C: "Makes the site have a warning", correct: false},
+      { D: "Adds alarm sound the data", correct: false},
+      ]
     },
     {
       question: "In javascript what does * mean?",
-      
-      A: "Multiplication",
-      B: "Focus",
-      C: "Shift Up",
-      D: "Modulus",
-      correct: "A",
-    }
-  ];
+      answers: [
+      { A: "Multiplication", correct: true},
+      { B: "Focus", correct: false},
+      { C: "Shift Up", correct: false},
+      { D: "Modulus", correct: false},
+      ]
+    },
+  ]
 
 const questionsEl = document.querySelectorAll('h3')
 const answerEls = document.querySelector('.answer');
