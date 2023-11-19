@@ -44,11 +44,11 @@ body {
 }
 
 #question {
-    width: 800px;
+    /* width: 800px;
     height: 100px;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 0; */
 }
 
 .container{

@@ -2,20 +2,27 @@ var timerEl = document.querySelector("#timer");
 var startButtonEl = document.querySelector("#start");
 var highScoreButton = document.querySelector("#highScore-button");
 var scoreEl = document.querySelector("#score");
-const questionEl = document.querySelector("#questions");
-const answersEl = document.querySelector("#answers");
+const questionEl = document.querySelector("#question");
+const answersEl = document.querySelectorAll(".answers");
+var quizEl = document.querySelector("#quiz");
 var timeInterval 
+var timeLeft = 60
 
+quizEl.style.display ="none"
 
 // Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click", function() { 
+startButtonEl.addEventListener("click", function() { 
+  quizEl.style.display ="block"
+startButtonEl.style.display ="none"
+  startTimer() 
+  loadQuiz();
 });
 
-startButton.addEventListener("click")
-function () {
+
+function startTimer () {
   timerLeft = 105;
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-    var timeInterval = setInterval(function () {
+     timeInterval = setInterval(function () {
       // As long as the `timeLeft` is greater than 1
       if (timeLeft > 1) {
       // Set the `textContent` of `timerEl` to show the remaining seconds
@@ -36,8 +43,8 @@ function () {
 
 
   
-  highScoreButton.addEventListener("click", function () {  
-  });
+  // highScoreButton.addEventListener("click", function () {  
+  // });
 
 
 
@@ -108,29 +115,20 @@ function () {
     },
   ]
 
-const questionsEl = document.querySelectorAll('h3')
-const answerEls = document.querySelector('.answer');
-
-const A_text = document.getElementById('A_text');
-const B_text = document.getElementById('B_text');
-const C_text = document.getElementById('C_text');
-const D_text = document.getElementById('D_text');
-const submitButton = document.getElementById('button');
-
 
 let currentQuestion = 0;
 let score = 0
 
-loadQuiz();
+
 
 function loadQuiz() {
-    deselected();
+  //  deselected();
     const currentQuizData = quizData[currentQuestion];
-    questionsEl.innerText = currentQuizData.question;
-    A_text.innerText = currentQuizData.A;
-    B_text.innerText = currentQuizData.B;
-    C_text.innerText = currentQuizData.C;
-    D_text.innerText = currentQuizData.D;
+    questionEl.innerText = currentQuizData.question;
+  answersEl[0].innerText = currentQuizData.answers[0].A;
+  answersEl[1].innerText = currentQuizData.answers[1].B;
+  answersEl[2].innerText = currentQuizData.answers[2].C;
+  answersEl[3].innerText = currentQuizData.answers[3].D;
 }
 
 
