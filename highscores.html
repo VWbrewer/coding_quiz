@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Highscores</title>
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>High Scores</title>
 
-  <body>
-    <div class="wrapper">
-      <h1>Highscores</h1>
-      <ol id="highscores"></ol>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
 
-      <a href="index.html"><button>Go Back</button></a>
-      <button id="clear">Clear Highscores</button>
+<body>
+  <header>
+    <div id="btnDiv">
+      <button id="score"><a href="index.html"><button>Go Back</button></a>
     </div>
+  </header>
 
-    <script src="./assets/js/scores.js"></script>
-  </body>
-</html>r
+  <div id="highScoreDisplay"></div>
+  <form id="initials">
+    <label>Input your initials! <input id="initialsInput"></label>
+  </form>
+  </div>
+
+  <script src="./assets/js/scores.js"></script>
+</body>
+
+</html>
